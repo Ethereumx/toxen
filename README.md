@@ -12,16 +12,16 @@
 
 ## Adapter Pattern
 
-We use the **Adapter Pattern** to define a standard interface across all supported blockchains:
+The **Adapter Pattern** is used to define a standard interface across all supported blockchains:
 
-#### ChainAdapter Interface
-Defines the core methods (connect, deployContract...)
+### ChainAdapter Interface
+The interface defines the core methods that are going to be needed regardless of the blockchain. All adapters conform to the same interface, so the system works consistently regardless of the chain.
 
-Each blockchain has its own adapter implementation:
+Each blockchain has its own adapter implementation, For example:
 - `EthereumAdapter` — EVM-compatible logic via `ethers.js`
 - `SolanaAdapter` — Solana logic via `@solana/web3.js`
 
-These adapters encapsulate chain-specific behavior behind a shared interface, ensuring that higher-level systems don’t depend on blockchain internals.
+These adapters encapsulate chain-specific behavior behind the shared interface, ensuring that higher-level systems don’t depend on blockchain internals.
 
 
 ### Orchestrator
