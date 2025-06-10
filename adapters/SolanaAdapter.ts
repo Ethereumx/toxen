@@ -8,8 +8,8 @@ import {
     LAMPORTS_PER_SOL,
   } from "@solana/web3.js";
   
-  import { ChainAdapter, DeploymentResult } from "../interfaces/ChainAdapter";
-  import { DeployConfig } from "../interfaces/DeployConfig";
+  import { ChainAdapter } from "../interfaces/ChainAdapter";
+  import { DeployConfig, DeploymentResult } from "../interfaces/types";
   
   export class SolanaAdapter implements ChainAdapter {
     private connection: Connection;
@@ -24,7 +24,7 @@ import {
       await this.connection.getLatestBlockhash(); // health check
     }
   
-    // No-op for now: contract deployment not supported in this minimal version
+    // contract deployment not supported yet cuz can't be done with @solana/web3.js
     async deployContract(config: DeployConfig): Promise<DeploymentResult> {
       throw new Error("deployContract() not implemented for Solana in this adapter");
     }

@@ -1,8 +1,8 @@
 // adapters/EthereumAdapter.ts
 
 import { ethers } from "ethers";
-import { ChainAdapter, DeploymentResult } from "../interfaces/ChainAdapter";
-import { DeployConfig } from "../interfaces/DeployConfig";
+import { ChainAdapter } from "../interfaces/ChainAdapter";
+import { DeployConfig, DeploymentResult } from "../interfaces/types";
 
 export class EthereumAdapter implements ChainAdapter {
   private provider: ethers.JsonRpcProvider;

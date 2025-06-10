@@ -5,8 +5,8 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 import { EthereumAdapter } from "../adapters/EthereumAdapter";
 import { SolanaAdapter } from "../adapters/SolanaAdapter";
 import { MultiChainOrchestrator } from "../orchestrator/MultiChainOrchestrator";
-import { DeployConfig } from "../interfaces/DeployConfig";
 import { ChainAdapter } from "../interfaces/ChainAdapter";
+import { DeployConfig } from "../interfaces/types";
 import artifact from "./Mycontract.json";
 
 // --- Load adapters ---

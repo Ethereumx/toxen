@@ -1,16 +1,10 @@
-import { DeployConfig } from "./DeployConfig";
+import { DeployConfig, DeploymentResult, TransactionResult } from "./types";
 
-export interface DeploymentResult {
-    address: string;
-    txHash: string;
-  }
-  
 export interface ChainAdapter {
     connect(): Promise<void>;
     deployContract(config: DeployConfig): Promise<DeploymentResult>;
-    sendTransaction(to: string, value: string): Promise<{ hash: string; status?: any }>;
+    sendTransaction(to: string, value: string): Promise<TransactionResult>;
     getTransactionStatus(txHash: string): Promise<any>;
     getBalance(address?: string): Promise<number>;
     getAddress(): string;
-  }
-  
+}

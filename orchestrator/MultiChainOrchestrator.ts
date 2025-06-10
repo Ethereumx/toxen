@@ -1,7 +1,7 @@
 // orchestrator/MultiChainOrchestrator.ts
 
-import { ChainAdapter, DeploymentResult } from "../interfaces/ChainAdapter";
-import { DeployConfig } from "../interfaces/DeployConfig";
+import { ChainAdapter } from "../interfaces/ChainAdapter";
+import { DeployConfig, DeploymentResult } from "../interfaces/types";
 
 export class MultiChainOrchestrator {
   constructor(private adapters: Map<string, ChainAdapter>) {}
